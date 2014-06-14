@@ -20,6 +20,7 @@ typedef void (^basicBlock)(void);
 @property(nonatomic) CGFloat bottom;
 @property(nonatomic) CGFloat width;
 @property(nonatomic) CGFloat height;
+@property(nonatomic) basicBlock onTouchesBegan;
 @property(nonatomic) basicBlock onTouchesEnded;
 
 - (void)expandFrame:(CGFloat)length;

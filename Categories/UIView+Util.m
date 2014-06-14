@@ -9,10 +9,12 @@
 #import "UIView+Util.h"
 #import <objc/runtime.h>
 
+NSString* const kOnTouchesBeganKey = @"kOnTouchesBeganKey";
 NSString* const kOnTouchesEndedKey = @"kOnTouchesEndedKey";
 
 @implementation UIView (Util)
 
+@dynamic onTouchesBegan;
 @dynamic onTouchesEnded;
 
 #pragma mark--- setters & getters
@@ -89,6 +91,16 @@ NSString* const kOnTouchesEndedKey = @"kOnTouchesEndedKey";
   self.frame = frame;
 }
 
+- (basicBlock)onTouchesBegan {
+  return objc_getAssociatedObject(self,
+                                  (__bridge const void*)(kOnTouchesBeganKey));
+}
+
+- (void)setOnTouchesBegan:(basicBlock)onTouchesBegan {
+  objc_setAssociatedObject(self, (__bridge const void*)(kOnTouchesBeganKey),
+                           onTouchesBegan, OBJC_ASSOCIATION_COPY);
+}
+
 - (basicBlock)onTouchesEnded {
   return objc_getAssociatedObject(self,
                                   (__bridge const void*)(kOnTouchesEndedKey));
@@ -142,6 +154,13 @@ NSString* const kOnTouchesEndedKey = @"kOnTouchesEndedKey";
 - (void)removeSubviews {
   for (UIView* view in [self subviews]) {
     [view removeFromSuperview];
+  }
+}
+
+- (void)touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event {
+  [super touchesBegan:touches withEvent:event];
+  if (self.onTouchesBegan) {
+    self.onTouchesBegan();
   }
 }
 
