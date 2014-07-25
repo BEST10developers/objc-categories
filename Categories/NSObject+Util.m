@@ -11,7 +11,7 @@
 
 @implementation NSObject (Util)
 
-- (NSArray *)propertyKeys {
+- (NSArray *)BT_propertyKeys {
   NSString *propertyName;
   unsigned int outCount, i;
   NSMutableArray *propertieNames = @[].mutableCopy;
@@ -25,7 +25,7 @@
   return propertieNames;
 }
 
-- (NSDictionary *)properties {
+- (NSDictionary *)BT_properties {
   NSString *propertyName;
   unsigned int outCount, i;
   NSMutableDictionary *propertieDictionary = @{}.mutableCopy;

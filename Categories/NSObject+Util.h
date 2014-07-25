@@ -10,7 +10,7 @@
 
 @interface NSObject (Util)
 
-- (NSArray *)propertyKeys;
-- (NSDictionary *)properties;
+- (NSArray *)BT_propertyKeys;
+- (NSDictionary *)BT_properties;
 
 @end
