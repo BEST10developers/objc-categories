@@ -21,6 +21,6 @@
 
  @param array        array of class names (each object must be NSString*)
  */
-- (BOOL)BT_isClassNameInArray:(NSArray *)array;
+- (BOOL)BT_isKindOfClassInArray:(NSArray *)array;
 
 @end
