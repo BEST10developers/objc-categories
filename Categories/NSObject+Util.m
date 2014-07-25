@@ -43,4 +43,13 @@
   return propertieDictionary;
 }
 
+- (BOOL)BT_isClassNameInArray:(NSArray *)array {
+  for (NSString *className in array) {
+    if ([self isKindOfClass:NSClassFromString(className)]) {
+      return YES;
+    }
+  }
+  return NO;
+}
+
 @end
