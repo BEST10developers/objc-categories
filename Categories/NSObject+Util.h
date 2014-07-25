@@ -13,4 +13,14 @@
 - (NSArray *)BT_propertyKeys;
 - (NSDictionary *)BT_properties;
 
+/*!
+ @method
+
+ @abstract
+ Test if passed array of NSString includes current class name.
+
+ @param array        array of class names (each object must be NSString*)
+ */
+- (BOOL)BT_isKindOfClassInArray:(NSArray *)array;
+
 @end
