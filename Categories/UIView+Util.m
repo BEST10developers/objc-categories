@@ -125,7 +125,7 @@ NSString* const kOnTouchesEndedKey = @"kOnTouchesEndedKey";
   }
 }
 
-- (void)fitHeightWithSubViews {
+- (void)BT_fitHeightWithSubViews {
   CGFloat height = 0;
   for (UIView* view in self.subviews) {
     if (height < view.bottom) {
@@ -133,6 +133,31 @@ NSString* const kOnTouchesEndedKey = @"kOnTouchesEndedKey";
     }
   }
   self.height = height;
+}
+
+- (void)BT_fitWidthWithSubViews {
+  CGFloat width = 0;
+  for (UIView* view in self.subviews) {
+    if (width < view.right) {
+      width = view.right;
+    }
+  }
+  self.width = width;
+}
+
+- (void)BT_fitSizeWithSubViews {
+  CGFloat height = 0;
+  CGFloat width = 0;
+  for (UIView* view in self.subviews) {
+    if (height < view.bottom) {
+      height = view.bottom;
+    }
+    if (width < view.right) {
+      width = view.right;
+    }
+  }
+  self.height = height;
+  self.width = width;
 }
 
 - (void)addBorderBottom:(CGFloat)lineWeight color:(UIColor*)color {
