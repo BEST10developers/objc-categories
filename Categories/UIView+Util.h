@@ -24,7 +24,9 @@ typedef void (^basicBlock)(void);
 @property(nonatomic) basicBlock onTouchesEnded;
 
 - (void)expandFrame:(CGFloat)length;
-- (void)fitHeightWithSubViews;
+- (void)BT_fitHeightWithSubViews;
+- (void)BT_fitWidthWithSubViews;
+- (void)BT_fitSizeWithSubViews;
 - (void)addBorderBottom:(CGFloat)lineWeight color:(UIColor*)color;
 - (void)logFrame;
 - (void)removeSubviews;
