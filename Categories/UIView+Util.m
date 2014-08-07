@@ -113,7 +113,7 @@ NSString* const kOnTouchesEndedKey = @"kOnTouchesEndedKey";
 
 #pragma mark--- functions
 
-- (void)expandFrame:(CGFloat)length {
+- (void)BT_expandFrame:(CGFloat)length {
   self.left -= length;
   self.top -= length;
   self.width += length * 2;

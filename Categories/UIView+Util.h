@@ -23,7 +23,7 @@ typedef void (^basicBlock)(void);
 @property(nonatomic) basicBlock onTouchesBegan;
 @property(nonatomic) basicBlock onTouchesEnded;
 
-- (void)expandFrame:(CGFloat)length;
+- (void)BT_expandFrame:(CGFloat)length;
 - (void)BT_fitHeightWithSubViews;
 - (void)BT_fitWidthWithSubViews;
 - (void)BT_fitSizeWithSubViews;
