@@ -160,6 +160,30 @@ NSString* const kOnTouchesEndedKey = @"kOnTouchesEndedKey";
   self.width = width;
 }
 
+- (void)BT_travel:(void (^)(UIView *view, NSUInteger level))block {
+  [self BT_travel:block level:0];
+}
+
+- (void)BT_travel:(void (^)(UIView *view, NSUInteger level))block level:(NSUInteger)level {
+  if (block) {
+    block(self, level);
+  }
+  NSUInteger nextLevel = level + 1;
+  for (UIView *view in self.subviews) {
+    [view BT_travel:block level:nextLevel];
+  }
+}
+
+- (void)BT_printHierarchy {
+  [self BT_travel:^(UIView *view, NSUInteger level) {
+    NSMutableString *indent = [NSMutableString string];
+    for (NSUInteger i = 0 ; i < level; i++) {
+      [indent appendString:@"  "];
+    }
+    NSLog(@"%@%@", indent, view);
+  }];
+}
+
 - (void)addBorderBottom:(CGFloat)lineWeight color:(UIColor*)color {
   UIView* line = [[UIView alloc] init];
   line.width = self.width;
