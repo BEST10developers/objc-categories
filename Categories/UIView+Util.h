@@ -27,10 +27,10 @@ typedef void (^basicBlock)(void);
 - (void)BT_fitHeightWithSubViews;
 - (void)BT_fitWidthWithSubViews;
 - (void)BT_fitSizeWithSubViews;
-- (void)addBorderBottom:(CGFloat)lineWeight color:(UIColor*)color;
+- (void)addBorderBottom:(CGFloat)lineWeight color:(UIColor *)color;
 - (void)logFrame;
 - (void)removeSubviews;
 - (void)BT_printHierarchy;
 - (void)BT_travel:(void (^)(UIView *view, NSUInteger level))block;
-
+- (UIView *)BT_findFirstResponder;
 @end
