@@ -15,5 +15,6 @@
 - (void)setKern:(CGFloat)kern;
 - (void)addAttributes:(NSDictionary *)attributes;
 - (void)searchAndMakeBoldString:(NSString *)string;
+- (void)searchAndMakeBoldStringWithArray:(NSArray *)strings;
 
 @end
