@@ -10,11 +10,10 @@
 
 @interface UILabel (Util)
 
-- (id)initWithText:(NSString*)text
-              font:(UIFont*)font
-          maxWidth:(CGFloat)maxWidth;
+- (id)initWithText:(NSString *)text font:(UIFont *)font maxWidth:(CGFloat)maxWidth;
 - (void)addUnderLine;
 - (void)setKern:(CGFloat)kern;
-- (void)addAttributes:(NSDictionary*)attributes;
+- (void)addAttributes:(NSDictionary *)attributes;
+- (void)searchAndMakeBoldString:(NSString *)string;
 
 @end

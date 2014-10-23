@@ -1,2 +1,8 @@
 ---
 BasedOnStyle:  Google
+ColumnLimit: 115
+AllowShortBlocksOnASingleLine: false
+AllowShortFunctionsOnASingleLine: false
+AllowShortLoopsOnASingleLine: false
+AllowShortIfStatementsOnASingleLine: false
+ContinuationIndentWidth: 2
