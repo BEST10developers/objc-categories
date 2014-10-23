@@ -61,4 +61,10 @@
   self.attributedText = attributedString;
 }
 
+- (void)searchAndMakeBoldStringWithArray:(NSArray *)strings {
+  for (NSString *string in strings) {
+    [self searchAndMakeBoldString:string];
+  }
+}
+
 @end
